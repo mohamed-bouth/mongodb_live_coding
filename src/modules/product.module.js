@@ -3,21 +3,21 @@ import mongoose from "mongoose";
 const productSchema = new mongoose.Schema({
     name: {
         type: String,
-        require: true,
+        required: true,
         trim: true,
         minlength: 2
     },
     price: {
-        type: Float64Array,
-        require: true,
+        type: Number,
+        required: true,
         min: 0
     },
     category: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Category',
-        require: true
+        required: true
     }
-}, { timeseries: true })
+}, { timestamps: true })
 
 const Product = mongoose.model('Product', productSchema)
 

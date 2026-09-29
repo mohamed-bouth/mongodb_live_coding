@@ -4,7 +4,7 @@ export async function getCategories(req, res) {
     try {
         const categories = await Category.find()
 
-        res.status(201).json({
+        res.status(200).json({
             success: true,
             data: {
                 categories

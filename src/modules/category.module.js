@@ -1,17 +1,18 @@
-import mongoose, { mongo } from "mongoose";
+import mongoose from "mongoose";
 
 const categoyschema = new mongoose.Schema({
     name: {
         type: String,
-        required: [true, "le nom est obligatoire"],
+        required: true,
         trim: true,
-        minlength: [2, "minimum 2 caracteres"],
+        minlength: 2,
         unique: true,
     },
-    descripiton: {
+    description: {
         type: String,
         trim: true,
-        maxlength: 200
+        maxlength: 200,
+        required : true
     },
 }, { timestamps: true })
 
